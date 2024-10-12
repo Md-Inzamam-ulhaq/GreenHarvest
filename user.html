@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Available Produce - GreenHarvest</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Available Produce</h1>
+    </header>
+
+    <main>
+        <section class="produce-list">
+            <!-- Produce items will be dynamically added here -->
+        </section>
+    </main>
+
+    <script>
+        // Example function to fetch and display produce items
+        function loadProduce() {
+            // Fetch data from your server (this could be a PHP file returning JSON)
+            fetch('fetch_produce.php') // Replace with your actual PHP file
+                .then(response => response.json())
+                .then(data => {
+                    const produceList = document.querySelector('.produce-list');
+                    data.forEach(item => {
+                        const itemDiv = document.createElement('div');
+                        itemDiv.className = 'item';
+                        itemDiv.innerHTML = `
+                            <h3>${item.name}</h3>
+                            <img src="${item.photo}" alt="Produce Image" width="100" height="100">
+                            <p>Category: ${item.category}</p>
+                            <p>Variety: ${item.variety}</p>
+                            <p>Quantity: ${item.quantity} KG</p>
+                            <p>Price: ${item.price} Rupees</p>
+                            <p>Address: ${item.address}</p>
+                            <button onclick="contactFarmer('${item.farmer_name}')">Contact Farmer</button>
+                            <button onclick="buyNow('${item.name}')">Buy Now</button>
+                        `;
+                        produceList.appendChild(itemDiv);
+                    });
+                })
+                .catch(error => console.error('Error fetching produce:', error));
+        }
+
+        function contactFarmer(farmerName) {
+            alert("Contacting " + farmerName);
+            // Implement actual contact logic (e.g., show contact form)
+        }
+
+        function buyNow(itemName) {
+            alert("Buying " + itemName);
+            // Implement actual purchase logic
+        }
+
+        // Load produce on page load
+        document.addEventListener('DOMContentLoaded', loadProduce);
+    </script>
+</body>
+</html>

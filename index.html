@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farm Produce Portal</title>
+     
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center; /* Center align text */
+            overflow: hidden; /* Prevents scrolling */
+        }
+
+        header {
+            background-color: rgba(76, 175, 80, 0.9); /* Green with transparency */
+            color: white;
+            padding: 10px 0;
+            position: relative; /* Allows positioning of the header */
+            z-index: 2; /* Ensure header is above the image */
+        }
+
+        .full-screen-image {
+            position: fixed; /* Fixed positioning for full screen */
+            top: 60px; /* Starts below the header */
+            left: 0;
+            width: 100%; /* Full width */
+            height: calc(100% - 60px); /* Full height minus header height */
+            object-fit: cover; /* Cover the entire area */
+            opacity: 0.5; /* 50% transparency */
+            z-index: 1; /* Ensure image is below other elements */
+            transition: opacity 0.5s ease-in-out; /* Smooth opacity transition */
+        }
+
+        .login-options {
+            position: absolute; /* Position buttons over the image */
+            top: 50%; /* Center vertically */
+            left: 50%; /* Center horizontally */
+            transform: translate(-50%, -50%); /* Adjust for the button size */
+            display: flex;
+            gap: 20px; /* Space between buttons */
+            z-index: 2; /* Ensure buttons are on top */
+        }
+
+        .login-btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s; /* Smooth transitions */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Initial shadow effect */
+        }
+
+        .login-btn:hover {
+            background-color: #45a049;
+            transform: scale(1.1); /* Scale effect on hover */
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Shadow effect on hover */
+        }
+
+        .info {
+            position: relative;
+            z-index: 2; /* Ensure the info section is above the image */
+            margin-bottom: 20px;
+            opacity: 0; /* Start hidden */
+            animation: fadeIn 1s forwards; /* Fade-in effect */
+            animation-delay: 0.5s; /* Delay before fade-in */
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0; /* Start from transparent */
+            }
+            to {
+                opacity: 1; /* End with visible */
+            }
+        }
+        
+        h2 {
+            color: #4CAF50; /* Green color for headings */
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px; /* Space between items */
+            flex-wrap: wrap; /* Wrap items to next line if necessary */
+        }
+
+        .contact-item {
+            background-color: #f9f9f9;
+            padding: 10px 15px;
+            border-radius: 5px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>"Your Fresh Produce Marketplace: Welcome to GreenHarvest"</h1>
+        <p>Your one-stop platform to buy fresh produce directly from farmers</p>
+    </header>
+
+    <img src="7718435.jpg" alt="Fresh farm produce" class="full-screen-image">
+
+    <main>
+        <section class="info">
+            <h2>About Us</h2>
+            <p>Our platform connects farmers with buyers looking for fresh, bulk produce. Farmers can list their vegetables, fruits, or flowers, and users can browse and purchase directly from the source.</p>
+        </section>
+
+        <section class="login-options">
+            <a href="farmer-login.php" class="login-btn">Farmer Login</a>
+            <a href="user-login.php" class="login-btn">Buyers Login</a>
+        </section>
+      
+    </main>
+<div></div><br><div></div><br><div></div><br><div></div><br><div></div><br><div></div><br><div></div><br><div></div><br><div></div><br><div></div><br><div></div><br>
+       <div id="section">
+        <h2>Benefits of Buying Directly from Farmers</h2>
+        <p>- Fresh produce at lower prices.</p>
+        <p>- Support local farmers and the community.</p>
+        <p>- Know where your food comes from.</p>
+    
+       </div>
+</body>
+</html>
